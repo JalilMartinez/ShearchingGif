@@ -3,6 +3,8 @@ import React from "react";
 
 import { GifComponent } from "./gifComponent";
 import { useFetchGifs } from "../hooks/useFetchGifs";
+import PropTypes from 'prop-types';
+
 export const GifGrid= ({cat})=>{
     const {images, isLoading} = useFetchGifs(cat); //custom hook
     
@@ -30,4 +32,8 @@ export const GifGrid= ({cat})=>{
                     
         </>
     )
+}
+
+GifGrid.propTypes = {
+    cat: PropTypes.string.isRequired,
 }

@@ -1,24 +1,27 @@
 import React, { useState } from "react";
-
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({onNewCat}) => {
 
-    const [input, setInput ] = useState('0')
+    const [input, setInput ] = useState('')
     const OnInputChange = (event)=>{
+       
+        setInput(event.target.value);
         console.log(event.target.value);
-        setInput(event.target.value)
     }
     const onSubmit = (evento) =>{
         event.preventDefault(); 
         if(input.trim().length<=1) return;
         console.log(input);
+        
+        
+        setInput('');
         // setCate(cat => [input,...cat]);   
         onNewCat(input.trim());
-        setInput('');
     }
     return(
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} aria-label='form'>
                 <input
                     type='text'
                     placeholder='buscar gifts'
@@ -31,4 +34,8 @@ export const AddCategory = ({onNewCat}) => {
         </>
     )
 
+}
+
+AddCategory.propTypes={
+    onNewCat: PropTypes.func.isRequired,
 }

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el nombre del componente debe de hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Evangelion"
+      src="https://evangelion-upon.com/asuka.png"
+    />
+    <p>
+      Evangelion
+    </p>
+  </div>
+</div>
+`;
